@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS3</title>
+    <script type="text/javascript">
+        // Prompt the user for the first number
+        var num1 = prompt("Enter the first number:");
+        num1 = parseFloat(num1);
+
+        // Prompt the user for the second number
+        var num2 = prompt("Enter the second number:");
+        num2 = parseFloat(num2);
+
+        // Check if the inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2)) {
+            console.log("One or both of the inputs are not valid numbers.");
+        } else {
+            // Display the numbers in order from smallest to largest
+            if (num1 < num2) {
+                console.log(num1 + ", " + num2);
+            } else if (num1 > num2) {
+                console.log(num2 + ", " + num1);
+            } else {
+                console.log("Both numbers are equal: " + num1);
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
