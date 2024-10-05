@@ -1,16 +1,38 @@
-Here is the JavaScript code to achieve this:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS3</title>
+    <script type="text/javascript">
+        // Prompt the user for the first number
+        var num1 = prompt("Enter the first number:");
+        num1 = parseFloat(num1);
 
-```javascript
-// Prompt the user to enter the first number
-let num1 = parseFloat(prompt('Enter the first number:'));
+        // Prompt the user for the second number
+        var num2 = prompt("Enter the second number:");
+        num2 = parseFloat(num2);
 
-// Prompt the user to enter the second number
-let num2 = parseFloat(prompt('Enter the second number:'));
+        // Check if the inputs are valid numbers
+        var output = "";
+        if (isNaN(num1) || isNaN(num2)) {
+            output = "One or both of the inputs are not valid numbers.";
+        } else {
+            // Display the numbers in order from smallest to largest
+            if (num1 < num2) {
+                output = num1 + ", " + num2;
+            } else if (num1 > num2) {
+                output = num2 + ", " + num1;
+            } else {
+                output = "Both numbers are equal: " + num1;
+            }
+        }
 
-// Compare the numbers and display them in ascending order
-if (num1 < num2) {
-  console.log(num1 + ', ' + num2);
-} else {
-  console.log(num2 + ', ' + num1);
-}
-```
+        // Display the output on the page after the page has loaded
+        window.onload = function() {
+            document.getElementById("output").innerText = output;
+        };
+    </script>
+</head>
+<body>
+    <p id="output"></p>
+</body>
+</html>
